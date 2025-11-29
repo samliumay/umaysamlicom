@@ -30,7 +30,7 @@ export default function FieldOperations() {
         <div className={styles.timeline}>
           {OPERATIVE_INTEL.mission_log.map((mission, index) => (
             <motion.div
-              key={mission.codename}
+              key={`${mission.codename}-${mission.date}-${index}`}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
