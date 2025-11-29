@@ -1,0 +1,96 @@
+@use '../../globals.module.scss' as *;
+
+.hud {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  background: rgba(5, 5, 5, 0.9);
+  border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+  backdrop-filter: blur(10px);
+  font-family: $font-data;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 0.6rem 1rem;
+    font-size: 0.65rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+.timeZones {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  
+  @media (max-width: 1200px) {
+    gap: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+.timeItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeLabel {
+  color: $text-secondary;
+  text-transform: uppercase;
+}
+
+.timeValue {
+  color: $accent-green;
+  @include text-glow($accent-green);
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $text-primary;
+}
+
+.label {
+  color: $text-secondary;
+  text-transform: uppercase;
+}
+
+.value {
+  color: $accent-green;
+  @include text-glow($accent-green);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statusText {
+  text-transform: uppercase;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $accent-green;
+  box-shadow: 0 0 10px $accent-green;
+  animation: pulse 2s infinite;
+}
+

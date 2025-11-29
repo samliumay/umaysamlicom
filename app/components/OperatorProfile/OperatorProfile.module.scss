@@ -1,0 +1,140 @@
+@use '../../globals.module.scss' as *;
+
+.profile {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  background: transparent;
+  
+  @media (max-width: 768px) {
+    padding: 6rem 1rem 2rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.content {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.operatorName {
+  font-size: 4rem;
+  font-family: $font-header;
+  color: $accent-green;
+  @include text-glow($accent-green);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.operatorTitle {
+  font-size: 1.5rem;
+  font-family: $font-mono;
+  color: $accent-cyan;
+  @include text-glow($accent-cyan);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+  
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.clearance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: $font-data;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.clearanceLabel {
+  color: $text-secondary;
+  text-transform: uppercase;
+}
+
+.clearanceValue {
+  color: $warning-amber;
+  @include text-glow($warning-amber);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.directive {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 2rem;
+  @include corner-brackets;
+  background: transparent;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+.directiveText {
+  font-size: 1.1rem;
+  font-family: $font-mono;
+  color: $text-primary;
+  line-height: 1.8;
+  font-style: italic;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.tacticalFocus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.focusLabel {
+  font-family: $font-header;
+  font-size: 0.9rem;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tag {
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 255, 65, 0.1);
+  border: 1px solid $accent-green;
+  color: $accent-green;
+  font-family: $font-data;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  @include text-glow($accent-green);
+  transition: all 0.3s;
+  
+  &:hover {
+    background: rgba(0, 255, 65, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+    transform: translateY(-2px);
+  }
+}
+

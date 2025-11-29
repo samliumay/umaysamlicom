@@ -1,0 +1,272 @@
+@use '../../globals.module.scss' as *;
+
+.operations {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: $accent-green;
+  font-family: $font-mono;
+  text-align: center;
+  text-shadow: 0 0 10px $accent-green;
+  letter-spacing: 0.2em;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.bracket {
+  color: $accent-cyan;
+  margin: 0 0.5rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+  
+  @media (max-width: 768px) {
+    padding-left: 2rem;
+  }
+}
+
+.missionReport {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+}
+
+.timelineConnector {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 20px;
+}
+
+.timelineDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: $accent-green;
+  border: 3px solid $bg-primary;
+  box-shadow: 0 0 15px $accent-green;
+  z-index: 2;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $accent-cyan;
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+.timelineLine {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    $accent-green,
+    rgba(0, 240, 255, 0.3)
+  );
+  margin-top: 0.5rem;
+  min-height: 50px;
+}
+
+.missionCard {
+  @include corner-brackets;
+  flex: 1;
+  padding: 2rem;
+  background: transparent;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  
+  @include glitch-effect;
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 240, 255, 0.1),
+      transparent
+    );
+    animation: scan 3s infinite;
+  }
+}
+
+@keyframes scan {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.missionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.missionCodename {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.codenameLabel {
+  font-size: 0.8rem;
+  color: $text-secondary;
+  font-family: $font-mono;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.codenameValue {
+  font-size: 1.5rem;
+  color: $accent-green;
+  font-family: $font-mono;
+  text-shadow: 0 0 10px $accent-green;
+  font-weight: bold;
+  
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.missionStatus {
+  display: flex;
+  align-items: center;
+}
+
+.statusBadge {
+  padding: 0.5rem 1rem;
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  
+  &.statusActive {
+    background: rgba(0, 255, 65, 0.2);
+    border: 1px solid $accent-green;
+    color: $accent-green;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+  }
+  
+  &.statusCompleted {
+    background: rgba(128, 0, 0, 0.2);
+    border: 1px solid $alert-red;
+    color: $alert-red;
+    box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
+  }
+}
+
+.missionDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-family: $font-mono;
+}
+
+.detailRow {
+  display: flex;
+  gap: 1rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+.detailLabel {
+  color: $text-secondary;
+  min-width: 100px;
+  font-size: 0.9rem;
+}
+
+.detailValue {
+  color: $text-primary;
+  font-size: 0.9rem;
+}
+
+.briefSection {
+  margin-top: 1.5rem;
+}
+
+.briefTitle {
+  font-size: 1rem;
+  color: $accent-cyan;
+  font-family: $font-mono;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.briefText {
+  font-family: $font-mono;
+  color: $text-primary;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
+}
+

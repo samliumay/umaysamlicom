@@ -1,0 +1,193 @@
+@use '../../globals.module.scss' as *;
+
+.references {
+  padding: 2rem 4rem;
+  min-height: 100vh;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: $accent-green;
+  font-family: $font-mono;
+  text-align: center;
+  text-shadow: 0 0 10px $accent-green;
+  letter-spacing: 0.2em;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.bracket {
+  color: $accent-cyan;
+  margin: 0 0.5rem;
+}
+
+.referencesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.referenceCard {
+  @include corner-brackets;
+  padding: 2rem;
+  background: transparent;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  
+  @include glitch-effect;
+  
+  &:hover {
+    border-color: $accent-cyan;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    background: rgba(15, 15, 15, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+.sourceInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sourceName {
+  font-size: 1.3rem;
+  color: $accent-green;
+  font-family: $font-mono;
+  text-shadow: 0 0 10px $accent-green;
+  margin: 0;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.sourceTitle {
+  font-size: 0.9rem;
+  color: $accent-cyan;
+  font-family: $font-mono;
+  margin: 0;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-family: $font-mono;
+}
+
+.affiliation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.affLabel {
+  font-size: 0.8rem;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.affValue {
+  font-size: 0.9rem;
+  color: $text-primary;
+}
+
+.quote {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 3px solid $accent-cyan;
+}
+
+.quoteText {
+  font-family: $font-mono;
+  font-size: 0.95rem;
+  color: $text-primary;
+  line-height: 1.8;
+  font-style: italic;
+  margin: 0;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contactLabel {
+  font-size: 0.8rem;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contactValue {
+  font-size: 0.9rem;
+  color: $accent-cyan;
+  font-family: $font-data;
+  word-break: break-all;
+}
+
+.attachment {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.attachmentLink {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid $accent-cyan;
+  color: $accent-cyan;
+  font-family: $font-mono;
+  font-size: 0.85rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s;
+  
+  &:hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+
+

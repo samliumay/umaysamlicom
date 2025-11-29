@@ -1,0 +1,119 @@
+@use '../../globals.module.scss' as *;
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background: rgba(5, 5, 5, 0.95);
+  border-right: 1px solid rgba(0, 255, 65, 0.3);
+  z-index: 1000;
+  padding: 2rem 0;
+  backdrop-filter: blur(10px);
+  font-family: $font-header;
+  
+  @media (max-width: 768px) {
+    width: 280px;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1.5rem;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: $text-secondary;
+  font-family: $font-header;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+  
+  &:hover {
+    color: $accent-cyan;
+    background: rgba(0, 243, 255, 0.05);
+  }
+  
+  &.active {
+    color: $accent-green;
+    @include text-glow($accent-green);
+    background: rgba(0, 255, 65, 0.1);
+  }
+}
+
+.itemNumber {
+  color: $accent-cyan;
+  font-weight: 700;
+  min-width: 50px;
+}
+
+.itemLabel {
+  flex: 1;
+}
+
+.activeIndicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: $accent-green;
+  box-shadow: 0 0 10px $accent-green;
+}
+
+.mobileToggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0, 255, 65, 0.2);
+  border: 2px solid $accent-green;
+  color: $accent-green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.3s;
+  @include text-glow($accent-green);
+  
+  &:hover {
+    background: rgba(0, 255, 65, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+  }
+  
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+

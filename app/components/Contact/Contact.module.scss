@@ -1,0 +1,147 @@
+@use '../../globals.module.scss' as *;
+
+.contact {
+  padding: 4rem 2rem;
+  min-height: 50vh;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: $accent-green;
+  font-family: $font-mono;
+  text-shadow: 0 0 10px $accent-green;
+  letter-spacing: 0.2em;
+  margin-bottom: 3rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.bracket {
+  color: $accent-cyan;
+  margin: 0 0.5rem;
+}
+
+.contactCard {
+  @include corner-brackets;
+  padding: 3rem;
+  background: transparent;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
+}
+
+.encryptedChannel {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+.channelTitle {
+  font-family: $font-header;
+  font-size: 0.9rem;
+  color: $text-secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.encryptedEmail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(0, 255, 65, 0.1);
+  border: 2px solid $accent-green;
+  position: relative;
+  font-family: $font-data;
+  color: $accent-green;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  @include text-glow($accent-green);
+  
+  @include glitch-effect;
+  
+  &:hover {
+    background: rgba(0, 255, 65, 0.2);
+    border-color: $accent-green;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+  }
+}
+
+.emailValue {
+  flex: 1;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.pulseGlow {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: $accent-green;
+  box-shadow: 0 0 20px $accent-green;
+  animation: pulse 2s infinite;
+}
+
+.nonSecureChannels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.channelLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.channelLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  color: $text-primary;
+  text-decoration: none;
+  font-family: $font-mono;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  
+  &:hover {
+    border-color: $accent-cyan;
+    background: rgba(0, 243, 255, 0.1);
+    @include text-glow($accent-cyan);
+  }
+  
+  svg {
+    color: $accent-cyan;
+  }
+}
+

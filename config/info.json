@@ -1,0 +1,207 @@
+{
+  "identity": {
+    "name": "Umay ŞAMLI",
+    "alias": "Kuzey",
+    "title": "Computer Scientist // System Manipulator",
+    "location": "Ankara, Turkey",
+    "clearance": "WORLD ATOMIC",
+    "directive": "Architecting secure systems via AI exploitation and Cyber Defense. Subject executes operations based on a covert theological agenda.",
+    "tacticalFocus": [
+      "NEURO-SYMBOLIC AI",
+      "AI RED TEAMING",
+      "DISCRETE MATH",
+      "SECURE_BY_DESIGN"
+    ],
+    "coords": {
+      "lat": "39.9334° N",
+      "lng": "32.8597° E"
+    },
+    "contact": {
+      "encrypted": "secureconnection.anthem001@passinbox.com",
+      "email": "samliumay965@gmail.com",
+      "linkedin": "linkedin.com/in/umaysamli",
+      "github": "github.com/samliumay"
+    }
+  },
+  "mission_log": [
+    {
+      "codename": "INFINITUM_IT",
+      "role": "Software Engineer",
+      "location": "Ankara, Türkiye",
+      "date": "Nov 2025 - Present",
+      "status": "ACTIVE",
+      "brief": "Execution of high-level software development and system engineering protocols."
+    },
+    {
+      "codename": "NATO",
+      "role": "Cyber Security Engineer",
+      "location": "Belgium",
+      "date": "May 2025 - Nov 2025",
+      "status": "COMPLETED",
+      "brief": "Contributed to cloud architecture design, developing comprehensive architectural frameworks based on specific use cases and constructing detailed attack tree models to assess security vulnerabilities. Engaged in public and private cloud auditing, focusing on technical security implementations, including lifecycle management, cloud security frameworks and technical implementation of security measures. Implemented security solutions addressing both 'security in the cloud' and 'security of the cloud', and contributed to the design of compliance controls for cloud service providers (CSPMs, IAM Implementation, CASP, CWPP ext.). Supported the Zero Trust Maturity Model (ZTMM) initiative by assisting the core team, mapping zero-trust doctrines to security services and maturity levels to facilitate strategic understanding and implementation."
+    },
+    {
+      "codename": "HISTOCAN",
+      "role": "Lead Software Engineer",
+      "location": "Türkiye",
+      "date": "Jan 2025 - Apr 2025",
+      "status": "COMPLETED",
+      "brief": "Developed and implemented the front-end interface of the platform, ensuring a responsive and user-friendly experience. Built and maintained the back-end architecture to support robust platform functionality. Designed, structured, and deployed the database to ensure efficient data storage and retrieval. Set up the application within a virtual environment and configured it for deployment on a cloud-based infrastructure. NOTE: Original contract was terminated at the end of April. But company still wanted me to assist. So I assisted them."
+    },
+    {
+      "codename": "NATO",
+      "role": "Cyber Security Engineer",
+      "location": "Belgium",
+      "date": "Sep 2023 - Oct 2024",
+      "status": "COMPLETED",
+      "brief": "AI Governance Framework: Pioneered NATO's first AI and ML security governance frameworks, setting protocols adopted by 20+ member nations to secure AI usage across critical systems. Automated Security Solutions: Developed a GDPR-compliant PII analysis tool for incident response, reducing processing times by 20% and ensuring seamless regulatory adherence. Risk Assessment & Policy Design: Implemented cloud and IoT security frameworks, enhancing risk assessments and aligning with GDPR for improved data protection and reduced vulnerabilities."
+    },
+    {
+      "codename": "TAI_AEROSPACE",
+      "role": "Software Engineer",
+      "location": "Ankara, Turkey",
+      "date": "Nov 2022 - May 2023",
+      "status": "COMPLETED",
+      "brief": "Factory Security System: Designed and deployed a Factory Tracing System utilizing IIoT and PLC technology, significantly boosting UAV assembly line efficiency and security monitoring. Machine Learning & Cyber: Enhanced AI-supported recognition algorithms for production monitoring, improving system accuracy by 20% and reducing retraining time by 15% through secure implementation."
+    },
+    {
+      "codename": "ASELSAN",
+      "role": "Software Engineer",
+      "location": "Ankara, Turkey",
+      "date": "Jul 2022 - Aug 2022",
+      "status": "COMPLETED",
+      "brief": "Shift Planner Automation: Developed an Automated Shift Planner with machine learning features, optimizing workforce scheduling and improving data-driven decision-making for increased efficiency. Security Optimization: Integrated cybersecurity measures into scheduling applications to ensure secure data handling and minimize potential breaches."
+    },
+    {
+      "codename": "SAVRONIK",
+      "role": "Software Engineer",
+      "location": "Ankara, Türkiye",
+      "date": "Jun 2021 - Sep 2021",
+      "status": "COMPLETED",
+      "brief": "Automated Train Testing System: Created a Docker-containerized testing platform for train systems, reducing test cycles by 15% and enhancing diagnostic accuracy and security compliance. Process Streamlining: Automated testing integration to improve operational efficiency, reducing risks associated with manual testing procedures."
+    }
+  ],
+  "education": [
+    {
+      "institution": "TED University",
+      "degree": "M.Sc. Computer Science",
+      "gpa": "4.0",
+      "status": "In Progress",
+      "focus": "Explainable AI, RL, Red-Teaming."
+    },
+    {
+      "institution": "TED University",
+      "degree": "B.Sc. Computer Engineering",
+      "gpa": "3.8",
+      "status": "Completed"
+    },
+    {
+      "institution": "TED University",
+      "degree": "Minor: Applied Data Science",
+      "gpa": "4.0",
+      "status": "Completed"
+    }
+  ],
+  "blueprints": [
+    {
+      "codename": "TPF",
+      "class": "LIFE_OS // ADHD_OPTIMIZED",
+      "status": "under development",
+      "algo": "Realism Point Calculation (RP = RT/FreeTime)",
+      "techStack": "React, Spring Boot, PostgreSQL, Docker",
+      "description": "An ADHD-optimized personal management platform designed to solve executive dysfunction through data-driven constraints. Features a custom 'Realism Point' (RP) algorithm to calculate daily load factors, an 'Auto-Distribution Engine' for task scheduling, and a 'Diamond System' for relational entity management.",
+      "github": "https://github.com/samliumay/tactical_planing_framework"
+    },
+    {
+      "codename": "FHR",
+      "class": "COMPUTER_VISION // ML",
+      "status": "finished",
+      "techStack": "PyTorch",
+      "description": "Designed to test various dehazing algorithms to achieve clear image visibility under extreme conditions (80% fog density). Developed a comparative platform to test traditional (manual) vs. machine learning-based algorithms in real-time.",
+      "github": "https://github.com/samliumay/FHR"
+    },
+    {
+      "codename": "CIR",
+      "class": "AI_AGENT",
+      "status": "finished",
+      "techStack": "React, OpenAI API",
+      "description": "A functional integration of OpenAI's ChatGPT with a React frontend. Acts as an intelligent coding agent and assistant within a custom web interface.",
+      "github": "https://github.com/samliumay/chatgpt-integration-react"
+    }
+  ],
+  "references": [
+    {
+      "name": "Dr. Burak Ekici",
+      "title": "Senior Researcher at University of Oxford",
+      "email": "burak.ekici@cs.ox.ac.uk",
+      "phone": "+44 779 636 59 51",
+      "affiliation": "University of Oxford",
+      "quote": "Subject demonstrates exceptional theoretical knowledge. Strong analytical foundation in formal verification.",
+      "attachment": "https://github.com/samliumay/samliumay/blob/main/CVs_and_Letters/Recommendation%20and%20Reference%20Letters/Reference%20Letter%20-%20Burak%20Ekici%20-%20University%20of%20Oxford.pdf"
+    },
+    {
+      "name": "Holger Spohn",
+      "title": "CISO, Head of Operational IT & AIM - Candriam (Formerly at NATO SHAPE)",
+      "email": "spohni@aol.com, Holger.SPOHN@shape.nato.int",
+      "phone": "Contact via email or refer to the letter",
+      "affiliation": "Candriam (Formerly NATO SHAPE)",
+      "quote": "Technical capabilities are superb. An engaged team player willing to tackle high-threat challenges.",
+      "attachment": "https://github.com/samliumay/samliumay/blob/main/CVs_and_Letters/Recommendation%20and%20Reference%20Letters/Reference%20Letter%20-%20Holger%20Spohn-%20NATO.pdf"
+    },
+    {
+      "name": "Dr. Ulaş Güleç",
+      "title": "CEO at Simovate / Asst. Prof. at TEDU / Project Consultant at Simsoft",
+      "email": "ulas.gulec@tedu.edu.tr",
+      "phone": "+90 535 765 60 01",
+      "affiliation": "Simovate / TED University",
+      "quote": "Displays unique leadership traits. Dedication to task completion is absolute.",
+      "attachment": "https://github.com/samliumay/samliumay/blob/main/CVs_and_Letters/Recommendation%20and%20Reference%20Letters/Reference%20Letter%20-%20Ulas%20Gulec%20-%20TED%20University.pdf"
+    },
+    {
+      "name": "Dr. Emin Kuğu",
+      "title": "Assistant Professor at TED University",
+      "email": "emin.kugu@tedu.edu.tr",
+      "phone": "+90 530 692 27 83",
+      "affiliation": "TED University",
+      "quote": "Displays unique leadership traits. Dedication to task completion is absolute.",
+      "attachment": "https://github.com/samliumay/samliumay/blob/main/CVs_and_Letters/Recommendation%20and%20Reference%20Letters/Reference%20Letter%20-%20Emin%20KUGU%20-%20TED%20University.pdf"
+    },
+    {
+      "name": "Andrea Accetta",
+      "title": "Head of Cyber Operations at SHAPE - NATO",
+      "email": "cybersec.itanavy@yahoo.com",
+      "phone": "+32 490 49 99 63",
+      "affiliation": "NATO SHAPE",
+      "quote": "",
+      "attachment": null
+    },
+    {
+      "name": "Kadri Yetiş",
+      "title": "Chief Technology Officer, VP of Software Engineering, MS",
+      "email": "usamli@yahoo.com",
+      "phone": "+90 533 454 17 99",
+      "affiliation": "",
+      "quote": "",
+      "attachment": null
+    },
+    {
+      "name": "Leo Fehmi Aslan",
+      "title": "Senior Cyber Security Analyst at NATO/NCIA",
+      "email": "fehmiaslan38@gmail.com",
+      "phone": "+34 649 99 84 12",
+      "affiliation": "NATO/NCIA",
+      "quote": "",
+      "attachment": null
+    },
+    {
+      "name": "Luke O'Brien",
+      "title": "Senior Cyber Security Engineer - NATO/CDT",
+      "email": "OBrien.Luke@hq.nato.int, Luke.OBrien@devops.ncia.nato.int",
+      "phone": "+44 7975 94 86 98",
+      "affiliation": "NATO/CDT",
+      "quote": "",
+      "attachment": null
+    }
+  ]
+}
+

@@ -1,0 +1,106 @@
+@use '../../globals.module.scss' as *;
+
+.biosBoot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-data;
+}
+
+.terminal {
+  padding: 2rem;
+  color: $accent-green;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  
+  @include text-glow($accent-green);
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+
+.bootLine {
+  margin-bottom: 0.5rem;
+  font-family: $font-data;
+  letter-spacing: 0.1em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  margin-left: 4px;
+  animation: blink-cursor 1s infinite;
+  color: $accent-green;
+}
+
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $bg-primary;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingText {
+  font-family: $font-data;
+  font-size: 2rem;
+  color: $accent-green;
+  @include text-glow($accent-green);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.loadingDots {
+  letter-spacing: 0.2em;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 0.2rem;
+  
+  span {
+    animation: dotPulse 1.4s infinite;
+    
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    
+    &:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    &:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+}
+
+@keyframes dotPulse {
+  0%, 60%, 100% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
