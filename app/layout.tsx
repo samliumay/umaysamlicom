@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Share_Tech_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const shareTechMono = Share_Tech_Mono({
   weight: ['400'],
@@ -26,6 +27,7 @@ export default function RootLayout({
       >
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
