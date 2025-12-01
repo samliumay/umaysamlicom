@@ -21,10 +21,10 @@
 
 .sectionTitle {
   font-size: 2rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
   text-align: center;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   letter-spacing: 0.2em;
   
   @media (max-width: 768px) {
@@ -33,7 +33,7 @@
 }
 
 .bracket {
-  color: $accent-cyan;
+  color: $accent-red;
   margin: 0 0.5rem;
 }
 
@@ -52,12 +52,10 @@
   @include corner-brackets;
   padding: 2rem;
   background: transparent;
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
-  
-  @include glitch-effect;
   
   &::before {
     content: '';
@@ -69,15 +67,15 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(0, 255, 65, 0.05),
+      rgba(255, 0, 0, 0.05),
       transparent
     );
     animation: scan 4s infinite;
   }
   
   &:hover {
-    border-color: $accent-green;
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+    border-color: $accent-red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
     background: rgba(15, 15, 15, 0.2);
   }
   
@@ -101,7 +99,7 @@
   align-items: flex-start;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.3);
   
   @media (max-width: 768px) {
     flex-direction: column;
@@ -125,9 +123,9 @@
 
 .codenameValue {
   font-size: 1.5rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   font-weight: bold;
   
   @media (max-width: 768px) {
@@ -154,17 +152,17 @@
   letter-spacing: 0.1em;
   
   &.statusDev {
-    background: rgba(255, 174, 0, 0.2);
-    border: 1px solid $warning-amber;
-    color: $warning-amber;
-    @include text-glow($warning-amber);
+    background: rgba(255, 51, 51, 0.2);
+    border: 1px solid $accent-red-light;
+    color: $accent-red-light;
+    @include text-glow($accent-red-light);
   }
   
   &.statusFinished {
-    background: rgba(0, 255, 65, 0.2);
-    border: 1px solid $accent-green;
-    color: $accent-green;
-    @include text-glow($accent-green);
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid $accent-red;
+    color: $accent-red;
+    @include text-glow($accent-red);
   }
 }
 
@@ -177,9 +175,9 @@
 
 .classValue {
   padding: 0.3rem 0.8rem;
-  background: rgba(0, 240, 255, 0.2);
-  border: 1px solid $accent-cyan;
-  color: $accent-cyan;
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid $accent-red;
+  color: $accent-red;
   font-family: $font-mono;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -199,7 +197,7 @@
   gap: 0.5rem;
   padding: 1rem;
   background: rgba(0, 0, 0, 0.3);
-  border-left: 3px solid $warning-amber;
+  border-left: 3px solid $accent-red-light;
 }
 
 .algoLabel {
@@ -211,8 +209,8 @@
 
 .algoValue {
   font-size: 0.9rem;
-  color: $warning-amber;
-  @include text-glow($warning-amber);
+  color: $accent-red-light;
+  @include text-glow($accent-red-light);
   font-family: $font-data;
 }
 
@@ -231,7 +229,7 @@
 
 .techValue {
   font-size: 0.9rem;
-  color: $accent-cyan;
+  color: $accent-red;
   font-weight: 500;
 }
 
@@ -258,15 +256,15 @@
 .githubLink {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0, 240, 255, 0.2);
+  border-top: 1px solid rgba(255, 0, 0, 0.2);
 }
 
 .githubButton {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: rgba(0, 240, 255, 0.1);
-  border: 1px solid $accent-cyan;
-  color: $accent-cyan;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid $accent-red;
+  color: $accent-red;
   font-family: $font-mono;
   font-size: 0.85rem;
   text-decoration: none;
@@ -275,8 +273,8 @@
   transition: all 0.3s;
   
   &:hover {
-    background: rgba(0, 240, 255, 0.2);
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
     transform: translateY(-2px);
   }
 }

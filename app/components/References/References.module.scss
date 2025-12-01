@@ -21,10 +21,10 @@
 
 .sectionTitle {
   font-size: 2rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
   text-align: center;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   letter-spacing: 0.2em;
   
   @media (max-width: 768px) {
@@ -33,14 +33,22 @@
 }
 
 .bracket {
-  color: $accent-cyan;
+  color: $accent-red;
   margin: 0 0.5rem;
 }
 
 .referencesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -52,16 +60,14 @@
   @include corner-brackets;
   padding: 2rem;
   background: transparent;
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
   
-  @include glitch-effect;
-  
   &:hover {
-    border-color: $accent-cyan;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    border-color: $accent-red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
     background: rgba(15, 15, 15, 0.2);
   }
   
@@ -73,7 +79,7 @@
 .cardHeader {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .sourceInfo {
@@ -84,9 +90,9 @@
 
 .sourceName {
   font-size: 1.3rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   margin: 0;
   
   @media (max-width: 768px) {
@@ -96,7 +102,7 @@
 
 .sourceTitle {
   font-size: 0.9rem;
-  color: $accent-cyan;
+  color: $accent-red;
   font-family: $font-mono;
   margin: 0;
 }
@@ -130,7 +136,7 @@
   margin: 1.5rem 0;
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.3);
-  border-left: 3px solid $accent-cyan;
+  border-left: 3px solid $accent-red;
 }
 
 .quoteText {
@@ -158,7 +164,7 @@
 
 .contactValue {
   font-size: 0.9rem;
-  color: $accent-cyan;
+  color: $accent-red;
   font-family: $font-data;
   word-break: break-all;
 }
@@ -166,15 +172,15 @@
 .attachment {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0, 240, 255, 0.2);
+  border-top: 1px solid rgba(255, 0, 0, 0.2);
 }
 
 .attachmentLink {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: rgba(0, 240, 255, 0.1);
-  border: 1px solid $accent-cyan;
-  color: $accent-cyan;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid $accent-red;
+  color: $accent-red;
   font-family: $font-mono;
   font-size: 0.85rem;
   text-decoration: none;
@@ -183,8 +189,8 @@
   transition: all 0.3s;
   
   &:hover {
-    background: rgba(0, 240, 255, 0.2);
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
     transform: translateY(-2px);
   }
 }

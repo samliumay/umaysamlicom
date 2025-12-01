@@ -32,7 +32,7 @@ export default function Sidebar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['intel', 'ops-log', 'train_ops', 'comms'];
+      const sections = ['intel', 'ops-log', 'skill_log', 'comms'];
       const scrollPosition = window.scrollY + 150;
 
       for (const section of sections) {
@@ -47,7 +47,7 @@ export default function Sidebar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -56,14 +56,20 @@ export default function Sidebar() {
   const navItems = [
     { id: 'intel', label: 'INTEL', number: '01' },
     { id: 'ops-log', label: 'OPS_LOG', number: '02' },
-    { id: 'train_ops', label: 'TRAIN_OPS', number: '03' },
+    { id: 'skill_log', label: 'SKILL_LOG', number: '03' },
     { id: 'comms', label: 'COMMS', number: '04' }
   ];
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - 80; // Account for HUD height
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
     if (isMobile) {
       setIsOpen(false);

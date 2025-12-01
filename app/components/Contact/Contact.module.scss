@@ -21,11 +21,18 @@
 
 .sectionTitle {
   font-size: 2rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   letter-spacing: 0.2em;
   margin-bottom: 3rem;
+  transition: all 0.3s;
+  cursor: default;
+  
+  &:hover {
+    @include text-glow($accent-red);
+    text-shadow: 0 0 20px $accent-red;
+  }
   
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -33,7 +40,7 @@
 }
 
 .bracket {
-  color: $accent-cyan;
+  color: $accent-red;
   margin: 0 0.5rem;
 }
 
@@ -41,9 +48,15 @@
   @include corner-brackets;
   padding: 3rem;
   background: transparent;
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.3);
   max-width: 800px;
   margin: 0 auto;
+  transition: all 0.3s;
+  
+  &:hover {
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.2);
+  }
   
   @media (max-width: 768px) {
     padding: 2rem;
@@ -53,7 +66,7 @@
 .encryptedChannel {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(0, 255, 65, 0.3);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .channelTitle {
@@ -63,6 +76,12 @@
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-bottom: 1rem;
+  transition: all 0.3s;
+  
+  &:hover {
+    color: $accent-red;
+    @include text-glow($accent-red);
+  }
 }
 
 .encryptedEmail {
@@ -70,23 +89,30 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: rgba(0, 255, 65, 0.1);
-  border: 2px solid $accent-green;
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid $accent-red;
   position: relative;
   font-family: $font-data;
-  color: $accent-green;
+  color: $accent-red;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s;
-  @include text-glow($accent-green);
-  
-  @include glitch-effect;
+  @include text-glow($accent-red);
   
   &:hover {
-    background: rgba(0, 255, 65, 0.2);
-    border-color: $accent-green;
+    background: rgba(255, 0, 0, 0.3);
+    border-color: $accent-red;
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
+    @include text-glow($accent-red);
+    
+    svg {
+      filter: drop-shadow(0 0 8px $accent-red);
+    }
+  }
+  
+  svg {
+    transition: all 0.3s;
   }
 }
 
@@ -104,9 +130,16 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: $accent-green;
-  box-shadow: 0 0 20px $accent-green;
+  background: $accent-red;
+  box-shadow: 0 0 20px $accent-red;
   animation: pulse 2s infinite;
+  transition: all 0.3s;
+}
+
+.encryptedEmail:hover .pulseGlow {
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 30px $accent-red;
 }
 
 .nonSecureChannels {
@@ -127,7 +160,7 @@
   gap: 1rem;
   padding: 1rem 1.5rem;
   background: transparent;
-  border: 1px solid rgba(0, 243, 255, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.2);
   color: $text-primary;
   text-decoration: none;
   font-family: $font-mono;
@@ -135,13 +168,21 @@
   transition: all 0.3s;
   
   &:hover {
-    border-color: $accent-cyan;
-    background: rgba(0, 243, 255, 0.1);
-    @include text-glow($accent-cyan);
+    border-color: $accent-red;
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    transform: translateX(5px);
+    @include text-glow($accent-red);
+    
+    svg {
+      filter: drop-shadow(0 0 8px $accent-red);
+      transform: scale(1.1);
+    }
   }
   
   svg {
-    color: $accent-cyan;
+    color: $accent-red;
+    transition: all 0.3s;
   }
 }
 

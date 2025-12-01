@@ -21,10 +21,10 @@
 
 .sectionTitle {
   font-size: 2rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
   text-align: center;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   letter-spacing: 0.2em;
   
   @media (max-width: 768px) {
@@ -33,7 +33,7 @@
 }
 
 .bracket {
-  color: $accent-cyan;
+  color: $accent-red;
   margin: 0 0.5rem;
 }
 
@@ -69,9 +69,9 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: $accent-green;
+  background: $accent-red;
   border: 3px solid $bg-primary;
-  box-shadow: 0 0 15px $accent-green;
+  box-shadow: 0 0 15px $accent-red;
   z-index: 2;
   position: relative;
   
@@ -84,7 +84,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: $accent-cyan;
+    background: $accent-red;
     animation: pulse 2s infinite;
   }
 }
@@ -105,8 +105,8 @@
   width: 2px;
   background: linear-gradient(
     to bottom,
-    $accent-green,
-    rgba(0, 240, 255, 0.3)
+    $accent-red,
+    $accent-red-dim
   );
   margin-top: 0.5rem;
   min-height: 50px;
@@ -117,11 +117,9 @@
   flex: 1;
   padding: 2rem;
   background: transparent;
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
-  
-  @include glitch-effect;
   
   @media (max-width: 768px) {
     padding: 1.5rem;
@@ -137,7 +135,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(0, 240, 255, 0.1),
+      rgba(255, 0, 0, 0.1),
       transparent
     );
     animation: scan 3s infinite;
@@ -159,7 +157,7 @@
   align-items: flex-start;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.3);
   
   @media (max-width: 768px) {
     flex-direction: column;
@@ -183,9 +181,9 @@
 
 .codenameValue {
   font-size: 1.5rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   font-weight: bold;
   
   @media (max-width: 768px) {
@@ -206,10 +204,10 @@
   letter-spacing: 0.1em;
   
   &.statusActive {
-    background: rgba(0, 255, 65, 0.2);
-    border: 1px solid $accent-green;
-    color: $accent-green;
-    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid $accent-red;
+    color: $accent-red;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
   }
   
   &.statusCompleted {
@@ -255,7 +253,7 @@
 
 .briefTitle {
   font-size: 1rem;
-  color: $accent-cyan;
+  color: $accent-red;
   font-family: $font-mono;
   margin-bottom: 1rem;
   text-transform: uppercase;

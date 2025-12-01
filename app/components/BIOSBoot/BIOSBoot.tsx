@@ -67,13 +67,13 @@ export default function BIOSBoot({ onComplete }: { onComplete: () => void }) {
 
       return () => clearInterval(typeInterval);
     } else {
-      // All lines complete, show loading screen
+      // All lines complete, show white screen then transition
       setTimeout(() => {
         setShowComplete(true);
-        // Show loading screen and transition
+        // Show white screen briefly then transition
         setTimeout(() => {
           onComplete();
-        }, 2000);
+        }, 500);
       }, 1000);
     }
   }, [currentLine, bootSequence, onComplete]);
@@ -102,17 +102,10 @@ export default function BIOSBoot({ onComplete }: { onComplete: () => void }) {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
               className={styles.loadingScreen}
-            >
-              <div className={styles.loadingText}>
-                <span className={styles.loadingDots}>LOADING</span>
-                <span className={styles.dots}>
-                  <span>.</span>
-                  <span>.</span>
-                  <span>.</span>
-                </span>
-              </div>
-            </motion.div>
+            />
           )}
         </div>
       </motion.div>

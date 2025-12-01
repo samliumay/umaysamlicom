@@ -7,7 +7,7 @@
   bottom: 0;
   width: 280px;
   background: rgba(5, 5, 5, 0.95);
-  border-right: 1px solid rgba(0, 255, 65, 0.3);
+  border-right: 1px solid rgba(255, 0, 0, 0.3);
   z-index: 1000;
   padding: 2rem 0;
   backdrop-filter: blur(10px);
@@ -44,19 +44,19 @@
   text-align: left;
   
   &:hover {
-    color: $accent-cyan;
-    background: rgba(0, 243, 255, 0.05);
+    color: $accent-red;
+    background: rgba(255, 0, 0, 0.05);
   }
   
   &.active {
-    color: $accent-green;
-    @include text-glow($accent-green);
-    background: rgba(0, 255, 65, 0.1);
+    color: $accent-red;
+    @include text-glow($accent-red);
+    background: rgba(255, 0, 0, 0.1);
   }
 }
 
 .itemNumber {
-  color: $accent-cyan;
+  color: $accent-red;
   font-weight: 700;
   min-width: 50px;
 }
@@ -71,8 +71,8 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: $accent-green;
-  box-shadow: 0 0 10px $accent-green;
+  background: $accent-red;
+  box-shadow: 0 0 10px $accent-red;
 }
 
 .mobileToggle {
@@ -82,20 +82,20 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(0, 255, 65, 0.2);
-  border: 2px solid $accent-green;
-  color: $accent-green;
+  background: rgba(255, 0, 0, 0.2);
+  border: 2px solid $accent-red;
+  color: $accent-red;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1001;
   transition: all 0.3s;
-  @include text-glow($accent-green);
+  @include text-glow($accent-red);
   
   &:hover {
-    background: rgba(0, 255, 65, 0.3);
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+    background: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
   }
   
   @media (min-width: 769px) {

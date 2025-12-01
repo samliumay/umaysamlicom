@@ -8,7 +8,7 @@
   z-index: 100;
   background: rgba(10, 10, 10, 0.9);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.2);
   padding: 1rem 0;
 }
 
@@ -45,13 +45,13 @@
   }
   
   &:hover {
-    color: $accent-cyan;
-    text-shadow: 0 0 10px $accent-cyan;
+    color: $accent-red;
+    text-shadow: 0 0 10px $accent-red;
   }
   
   &.active {
-    color: $accent-green;
-    text-shadow: 0 0 10px $accent-green;
+    color: $accent-red;
+    text-shadow: 0 0 10px $accent-red;
   }
 }
 
@@ -66,7 +66,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: $accent-green;
-  box-shadow: 0 0 10px $accent-green;
+  background: $accent-red;
+  box-shadow: 0 0 10px $accent-red;
 }
 

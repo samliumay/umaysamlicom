@@ -16,12 +16,12 @@
 
 .terminal {
   padding: 2rem;
-  color: $accent-green;
+  color: $accent-red;
   font-size: 1.2rem;
   line-height: 1.8;
   max-width: 800px;
   
-  @include text-glow($accent-green);
+  @include text-glow($accent-red);
   
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -40,7 +40,7 @@
   width: 2px;
   margin-left: 4px;
   animation: blink-cursor 1s infinite;
-  color: $accent-green;
+  color: $accent-red;
 }
 
 .loadingScreen {
@@ -49,7 +49,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: $bg-primary;
+  background: #ffffff;
   z-index: 10001;
   display: flex;
   align-items: center;
@@ -59,8 +59,8 @@
 .loadingText {
   font-family: $font-data;
   font-size: 2rem;
-  color: $accent-green;
-  @include text-glow($accent-green);
+  color: $accent-red;
+  @include text-glow($accent-red);
   display: flex;
   align-items: center;
   gap: 0.5rem;

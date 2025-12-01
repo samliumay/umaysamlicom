@@ -21,11 +21,11 @@
 
 .sectionTitle {
   font-size: 2rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
   text-align: center;
   margin-bottom: 3rem;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   letter-spacing: 0.2em;
   
   @media (max-width: 768px) {
@@ -34,13 +34,13 @@
 }
 
 .bracket {
-  color: $accent-cyan;
+  color: $accent-red;
   margin: 0 0.5rem;
 }
 
 .subsectionTitle {
   font-size: 1.2rem;
-  color: $accent-cyan;
+  color: $accent-red;
   font-family: $font-mono;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -55,7 +55,7 @@
   @include corner-brackets;
   padding: 2rem;
   background: rgba(15, 15, 15, 0.5);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.3);
   margin-bottom: 3rem;
   
   @media (max-width: 768px) {
@@ -66,15 +66,15 @@
 .cardHeader {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .operativeName {
   font-size: 1.8rem;
-  color: $accent-green;
+  color: $accent-red;
   font-family: $font-mono;
   margin-bottom: 0.5rem;
-  text-shadow: 0 0 10px $accent-green;
+  text-shadow: 0 0 10px $accent-red;
   
   @media (max-width: 768px) {
     font-size: 1.4rem;
@@ -83,7 +83,7 @@
 
 .alias {
   font-size: 1rem;
-  color: $accent-cyan;
+  color: $accent-red;
   font-family: $font-mono;
 }
 
@@ -128,8 +128,6 @@
   padding: 1.5rem;
   background: rgba(15, 15, 15, 0.5);
   border: 1px solid rgba(0, 255, 0, 0.2);
-  
-  @include glitch-effect;
 }
 
 .skillHeader {
@@ -140,12 +138,12 @@
 }
 
 .skillName {
-  color: $accent-green;
+  color: $accent-red;
   font-size: 1rem;
 }
 
 .skillLevel {
-  color: $accent-cyan;
+  color: $accent-red;
   font-size: 0.9rem;
 }
 
@@ -153,15 +151,15 @@
   width: 100%;
   height: 8px;
   background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(0, 240, 255, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
 }
 
 .progressFill {
   height: 100%;
-  background: linear-gradient(90deg, $accent-green, $accent-cyan);
-  box-shadow: 0 0 10px $accent-green;
+  background: linear-gradient(90deg, $accent-red, $accent-red-light);
+  box-shadow: 0 0 10px $accent-red;
   position: relative;
   
   &::after {
@@ -204,7 +202,7 @@
   @include corner-brackets;
   padding: 1rem;
   background: rgba(15, 15, 15, 0.5);
-  border: 1px solid rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.2);
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -213,13 +211,13 @@
   transition: all 0.3s;
   
   &:hover {
-    border-color: $accent-cyan;
-    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    border-color: $accent-red;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
   }
 }
 
 .researchIcon {
-  color: $accent-green;
+  color: $accent-red;
   font-size: 0.8rem;
 }
 
@@ -237,16 +235,14 @@
   @include corner-brackets;
   padding: 1.5rem;
   background: transparent;
-  border: 1px solid rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.2);
   font-family: $font-mono;
   transition: all 0.3s;
   cursor: pointer;
   
-  @include glitch-effect;
-  
   &:hover {
-    border-color: $accent-cyan;
-    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    border-color: $accent-red;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
     background: rgba(15, 15, 15, 0.2);
   }
 }
@@ -265,13 +261,13 @@
 }
 
 .eduInstitution {
-  color: $accent-green;
+  color: $accent-red;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
 .eduStatus {
-  color: $accent-cyan;
+  color: $accent-red;
   font-size: 0.9rem;
 }
 

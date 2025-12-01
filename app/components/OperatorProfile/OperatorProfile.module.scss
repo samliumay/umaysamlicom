@@ -30,8 +30,8 @@
 .operatorName {
   font-size: 4rem;
   font-family: $font-header;
-  color: $accent-green;
-  @include text-glow($accent-green);
+  color: $accent-red;
+  @include text-glow($accent-red);
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -44,8 +44,8 @@
 .operatorTitle {
   font-size: 1.5rem;
   font-family: $font-mono;
-  color: $accent-cyan;
-  @include text-glow($accent-cyan);
+  color: $accent-red;
+  @include text-glow($accent-red);
   margin-bottom: 1.5rem;
   letter-spacing: 0.1em;
   
@@ -70,8 +70,8 @@
 }
 
 .clearanceValue {
-  color: $warning-amber;
-  @include text-glow($warning-amber);
+  color: $accent-red-light;
+  @include text-glow($accent-red-light);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -82,7 +82,7 @@
   padding: 2rem;
   @include corner-brackets;
   background: transparent;
-  border: 1px solid rgba(0, 255, 65, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .directiveText {
@@ -121,19 +121,19 @@
 
 .tag {
   padding: 0.8rem 1.5rem;
-  background: rgba(0, 255, 65, 0.1);
-  border: 1px solid $accent-green;
-  color: $accent-green;
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid $accent-red;
+  color: $accent-red;
   font-family: $font-data;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  @include text-glow($accent-green);
+  @include text-glow($accent-red);
   transition: all 0.3s;
   
   &:hover {
-    background: rgba(0, 255, 65, 0.2);
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+    background: rgba(255, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
     transform: translateY(-2px);
   }
 }

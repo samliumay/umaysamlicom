@@ -1,13 +1,15 @@
 // Tactical Theme - Global Styles
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;500;700;900&family=Fira+Code:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
-// Color Palette
+// Color Palette - Red Theme
 $bg-primary: #050505; // Deep Void Black
 $bg-secondary: #0a0f0d; // Dark Gunmetal
-$accent-green: #00ff41; // Night Vision Green
-$accent-cyan: #00f3ff; // Tactical Cyan
-$warning-amber: #ffae00; // Warning Amber
-$alert-red: #800000;
+$accent-red: #ff0000; // Bright Red
+$accent-red-dark: #cc0000; // Dark Red
+$accent-red-light: #ff3333; // Light Red
+$accent-red-dim: #ff6666; // Dim Red
+$warning-red: #ff1a1a; // Warning Red
+$alert-red: #990000; // Dark Alert Red
 $text-primary: #ededed;
 $text-secondary: rgba(255, 255, 255, 0.3); // Dim for grid lines
 
@@ -26,7 +28,7 @@ $font-data: 'Fira Code', 'JetBrains Mono', monospace;
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 2px solid $accent-green;
+    border: 2px solid $accent-red;
   }
   
   &::before {
@@ -114,15 +116,7 @@ $font-data: 'Fira Code', 'JetBrains Mono', monospace;
   }
 }
 
-@mixin glitch-effect {
-  position: relative;
-  
-  &:hover {
-    animation: glitch 0.3s infinite;
-  }
-}
-
-@mixin text-glow($color: $accent-green) {
+@mixin text-glow($color: $accent-red) {
   text-shadow: 
     0 0 5px $color,
     0 0 10px $color,
@@ -150,37 +144,10 @@ $font-data: 'Fira Code', 'JetBrains Mono', monospace;
   }
   
   &::after {
-    color: #00ffff;
+    color: #00ff41;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     transform: translate(2px, 0);
     opacity: 0.8;
-  }
-}
-
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-    clip-path: polygon(0 0, 95% 0, 100% 5%, 0 100%);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 95%);
-  }
-  60% {
-    transform: translate(2px, 2px);
-    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
-  }
-  80% {
-    transform: translate(2px, -2px);
-    clip-path: polygon(0 0, 100% 5%, 95% 100%, 5% 100%);
-  }
-  100% {
-    transform: translate(0);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
@@ -198,7 +165,7 @@ $font-data: 'Fira Code', 'JetBrains Mono', monospace;
     border-color: transparent;
   }
   50% {
-    border-color: $accent-green;
+    border-color: $accent-red;
   }
 }
 

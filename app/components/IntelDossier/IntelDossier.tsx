@@ -20,7 +20,7 @@ export default function IntelDossier() {
   ];
 
   return (
-    <section id="train_ops" className={styles.dossier}>
+    <section id="skill_log" className={styles.dossier}>
       <div className={styles.container}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,6 @@ export default function IntelDossier() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.02 }}
                 className={styles.educationItem}
               >
                 <div className={styles.eduHeader}>
