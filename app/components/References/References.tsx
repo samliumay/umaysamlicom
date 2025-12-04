@@ -31,12 +31,11 @@ export default function References() {
           {OPERATIVE_INTEL.references.map((reference, index) => (
             <motion.div
               key={reference.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: index * 0.03 }}
               className={styles.referenceCard}
+              style={{ height: '500px' }}
             >
               <div className={styles.cardHeader}>
                 <div className={styles.sourceInfo}>

@@ -39,31 +39,40 @@
 
 .referencesGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  align-items: start;
   
   @media (max-width: 1400px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
   }
   
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
   }
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 }
 
 .referenceCard {
   @include corner-brackets;
-  padding: 2rem;
+  padding: 2.5rem;
   background: transparent;
   border: 1px solid rgba(255, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
+  min-height: 500px;
+  max-height: 600px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  will-change: transform, opacity;
   
   &:hover {
     border-color: $accent-red;
@@ -72,7 +81,10 @@
   }
   
   @media (max-width: 768px) {
-    padding: 1.5rem;
+    padding: 2rem;
+    min-height: 450px;
+    max-height: 550px;
+    height: 450px;
   }
 }
 
@@ -80,6 +92,8 @@
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+  flex-shrink: 0;
+  min-height: 100px;
 }
 
 .sourceInfo {
@@ -89,22 +103,27 @@
 }
 
 .sourceName {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: $accent-red;
   font-family: $font-mono;
   text-shadow: 0 0 10px $accent-red;
   margin: 0;
+  min-height: 2rem;
+  line-height: 1.4;
   
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    min-height: 1.8rem;
   }
 }
 
 .sourceTitle {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: $accent-red;
   font-family: $font-mono;
   margin: 0;
+  min-height: 1.5rem;
+  line-height: 1.5;
 }
 
 .cardBody {
@@ -112,6 +131,10 @@
   flex-direction: column;
   gap: 1.5rem;
   font-family: $font-mono;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .affiliation {
@@ -137,6 +160,11 @@
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.3);
   border-left: 3px solid $accent-red;
+  min-height: 100px;
+  max-height: 150px;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
 }
 
 .quoteText {
