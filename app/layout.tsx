@@ -3,6 +3,7 @@ import { Share_Tech_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import AudioPlayer from "./components/AudioPlayer/AudioPlayer";
 
 const shareTechMono = Share_Tech_Mono({
   weight: ['400'],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body
         className={`${shareTechMono.variable}`}
       >
+        <AudioPlayer />
         {children}
         <SpeedInsights />
         <Analytics />

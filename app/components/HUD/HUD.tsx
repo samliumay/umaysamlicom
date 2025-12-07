@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Lock, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import styles from './HUD.module.scss';
 import { OPERATIVE_INTEL } from '@/app/data/intel';
 
@@ -75,8 +75,7 @@ export default function HUD() {
           <div className={styles.statusItem}>
             <span className={styles.label}>NET_STATUS:</span>
             <span className={styles.value}>
-              <Lock size={12} />
-              <span className={styles.statusText}>ENCRYPTED</span>
+              <span className={styles.statusText}>ONLINE</span>
               <span className={styles.statusDot}></span>
             </span>
           </div>

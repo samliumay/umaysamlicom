@@ -1,7 +1,7 @@
 @use '../../globals.module.scss' as *;
 
 .blueprints {
-  padding: 2rem 4rem;
+  padding: 4rem 2rem;
   min-height: 100vh;
   position: relative;
   
@@ -11,7 +11,7 @@
 }
 
 .container {
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -37,25 +37,93 @@
   margin: 0 0.5rem;
 }
 
-.blueprintsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+.timeline {
+  position: relative;
+  padding-left: 3rem;
   
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    padding-left: 2rem;
   }
 }
 
-.blueprintCard {
+.projectReport {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+}
+
+.timelineConnector {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 20px;
+}
+
+.timelineDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: $accent-red;
+  border: 3px solid $bg-primary;
+  box-shadow: 0 0 15px $accent-red;
+  z-index: 2;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $accent-red;
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+.timelineLine {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    $accent-red,
+    $accent-red-dim
+  );
+  margin-top: 0.5rem;
+  min-height: 50px;
+}
+
+.projectCard {
   @include corner-brackets;
+  flex: 1;
   padding: 2rem;
   background: transparent;
   border: 1px solid rgba(255, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s;
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
   
   &::before {
     content: '';
@@ -67,20 +135,10 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 0, 0, 0.05),
+      rgba(255, 0, 0, 0.1),
       transparent
     );
-    animation: scan 4s infinite;
-  }
-  
-  &:hover {
-    border-color: $accent-red;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-    background: rgba(15, 15, 15, 0.2);
-  }
-  
-  @media (max-width: 768px) {
-    padding: 1.5rem;
+    animation: scan 3s infinite;
   }
 }
 
@@ -93,7 +151,7 @@
   }
 }
 
-.cardHeader {
+.projectHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -107,7 +165,7 @@
   }
 }
 
-.codenameSection {
+.projectCodename {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -133,123 +191,80 @@
   }
 }
 
-.classBadge {
+.projectStatus {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
-  
-  @media (max-width: 768px) {
-    align-items: flex-start;
-  }
+  align-items: center;
 }
 
 .statusBadge {
-  padding: 0.3rem 0.8rem;
-  font-family: $font-data;
-  font-size: 0.7rem;
+  padding: 0.5rem 1rem;
+  font-family: $font-mono;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   
-  &.statusDev {
-    background: rgba(255, 51, 51, 0.2);
-    border: 1px solid $accent-red-light;
-    color: $accent-red-light;
-    @include text-glow($accent-red-light);
-  }
-  
-  &.statusFinished {
+  &.statusActive {
     background: rgba(255, 0, 0, 0.2);
     border: 1px solid $accent-red;
     color: $accent-red;
-    @include text-glow($accent-red);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  }
+  
+  &.statusCompleted {
+    background: rgba(128, 0, 0, 0.2);
+    border: 1px solid $alert-red;
+    color: $alert-red;
+    box-shadow: 0 0 10px rgba(128, 0, 0, 0.3);
   }
 }
 
-.classLabel {
-  font-size: 0.7rem;
-  color: $text-secondary;
-  font-family: $font-mono;
-  text-transform: uppercase;
-}
-
-.classValue {
-  padding: 0.3rem 0.8rem;
-  background: rgba(255, 0, 0, 0.2);
-  border: 1px solid $accent-red;
-  color: $accent-red;
-  font-family: $font-mono;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.cardBody {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-family: $font-mono;
-}
-
-.algo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.3);
-  border-left: 3px solid $accent-red-light;
-}
-
-.algoLabel {
-  font-size: 0.8rem;
-  color: $text-secondary;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.algoValue {
-  font-size: 0.9rem;
-  color: $accent-red-light;
-  @include text-glow($accent-red-light);
-  font-family: $font-data;
-}
-
-.techStack {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.techLabel {
-  font-size: 0.8rem;
-  color: $text-secondary;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.techValue {
-  font-size: 0.9rem;
-  color: $accent-red;
-  font-weight: 500;
-}
-
-.description {
+.projectDetails {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-family: $font-mono;
 }
 
-.descLabel {
-  font-size: 0.8rem;
+.detailRow {
+  display: flex;
+  gap: 1rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+.detailLabel {
   color: $text-secondary;
+  min-width: 100px;
+  font-size: 0.9rem;
+}
+
+.detailValue {
+  color: $text-primary;
+  font-size: 0.9rem;
+}
+
+.briefSection {
+  margin-top: 1.5rem;
+}
+
+.briefTitle {
+  font-size: 1rem;
+  color: $accent-red;
+  font-family: $font-mono;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-.descText {
-  font-size: 0.95rem;
+.briefText {
+  font-family: $font-mono;
   color: $text-primary;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.8;
   margin: 0;
 }
 

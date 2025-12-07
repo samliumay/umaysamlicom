@@ -21,6 +21,8 @@ export default function Home() {
 
   const handleBootComplete = () => {
     setBootComplete(true);
+    // Dispatch custom event to trigger audio playback
+    window.dispatchEvent(new Event('bootComplete'));
   };
 
   return (

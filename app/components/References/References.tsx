@@ -27,47 +27,60 @@ export default function References() {
           </h2>
         </motion.div>
 
-        <div className={styles.referencesGrid}>
+        <div className={styles.timeline}>
           {OPERATIVE_INTEL.references.map((reference, index) => (
             <motion.div
-              key={reference.name}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.03 }}
-              className={styles.referenceCard}
-              style={{ height: '500px' }}
+              key={`${reference.name}-${index}`}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className={styles.referenceReport}
             >
-              <div className={styles.cardHeader}>
-                <div className={styles.sourceInfo}>
-                  <h3 className={styles.sourceName}>{reference.name}</h3>
-                  <p className={styles.sourceTitle}>{reference.title}</p>
-                </div>
+              <div className={styles.timelineConnector}>
+                <div className={styles.timelineDot}></div>
+                {index < OPERATIVE_INTEL.references.length - 1 && (
+                  <div className={styles.timelineLine}></div>
+                )}
               </div>
 
-              <div className={styles.cardBody}>
-                {reference.affiliation && (
-                  <div className={styles.affiliation}>
-                    <span className={styles.affLabel}>AFFILIATION:</span>
-                    <span className={styles.affValue}>{reference.affiliation}</span>
+              <div className={styles.referenceCard}>
+                <div className={styles.referenceHeader}>
+                  <div className={styles.referenceName}>
+                    <span className={styles.nameLabel}>REFERENCE:</span>
+                    <span className={styles.nameValue}>{reference.name}</span>
                   </div>
-                )}
+                  {reference.affiliation && (
+                    <div className={styles.affiliationBadge}>
+                      <span className={styles.affBadgeText}>{reference.affiliation}</span>
+                    </div>
+                  )}
+                </div>
 
-                {reference.email && (
-                  <div className={styles.contactInfo}>
-                    <span className={styles.contactLabel}>EMAIL:</span>
-                    <span className={styles.contactValue}>{reference.email}</span>
+                <div className={styles.referenceDetails}>
+                  <div className={styles.detailRow}>
+                    <span className={styles.detailLabel}>Title:</span>
+                    <span className={styles.detailValue}>{reference.title}</span>
                   </div>
-                )}
-
-                {reference.phone && (
-                  <div className={styles.contactInfo}>
-                    <span className={styles.contactLabel}>PHONE:</span>
-                    <span className={styles.contactValue}>{reference.phone}</span>
-                  </div>
-                )}
+                  
+                  {reference.email && (
+                    <div className={styles.detailRow}>
+                      <span className={styles.detailLabel}>Email:</span>
+                      <span className={styles.detailValue}>{reference.email}</span>
+                    </div>
+                  )}
+                  
+                  {reference.phone && (
+                    <div className={styles.detailRow}>
+                      <span className={styles.detailLabel}>Phone:</span>
+                      <span className={styles.detailValue}>{reference.phone}</span>
+                    </div>
+                  )}
+                </div>
 
                 {reference.quote && (
-                  <div className={styles.quote}>
+                  <div className={styles.quoteSection}>
+                    <h4 className={styles.quoteTitle}>EVALUATION:</h4>
                     <p className={styles.quoteText}>"{reference.quote}"</p>
                   </div>
                 )}

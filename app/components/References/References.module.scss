@@ -1,7 +1,7 @@
 @use '../../globals.module.scss' as *;
 
 .references {
-  padding: 2rem 4rem;
+  padding: 4rem 2rem;
   min-height: 100vh;
   position: relative;
   
@@ -11,7 +11,7 @@
 }
 
 .container {
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -37,134 +37,221 @@
   margin: 0 0.5rem;
 }
 
-.referencesGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  align-items: start;
-  
-  @media (max-width: 1400px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
+.timeline {
+  position: relative;
+  padding-left: 3rem;
   
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    padding-left: 2rem;
   }
+}
+
+.referenceReport {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+}
+
+.timelineConnector {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 20px;
+}
+
+.timelineDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: $accent-red;
+  border: 3px solid $bg-primary;
+  box-shadow: 0 0 15px $accent-red;
+  z-index: 2;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $accent-red;
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+.timelineLine {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    $accent-red,
+    $accent-red-dim
+  );
+  margin-top: 0.5rem;
+  min-height: 50px;
 }
 
 .referenceCard {
   @include corner-brackets;
-  padding: 2.5rem;
+  flex: 1;
+  padding: 2rem;
   background: transparent;
   border: 1px solid rgba(255, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s;
-  min-height: 500px;
-  max-height: 600px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  will-change: transform, opacity;
-  
-  &:hover {
-    border-color: $accent-red;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-    background: rgba(15, 15, 15, 0.2);
-  }
   
   @media (max-width: 768px) {
-    padding: 2rem;
-    min-height: 450px;
-    max-height: 550px;
-    height: 450px;
+    padding: 1.5rem;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 0, 0, 0.1),
+      transparent
+    );
+    animation: scan 3s infinite;
   }
 }
 
-.cardHeader {
+@keyframes scan {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.referenceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 0, 0, 0.3);
-  flex-shrink: 0;
-  min-height: 100px;
-}
-
-.sourceInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.sourceName {
-  font-size: 1.4rem;
-  color: $accent-red;
-  font-family: $font-mono;
-  text-shadow: 0 0 10px $accent-red;
-  margin: 0;
-  min-height: 2rem;
-  line-height: 1.4;
   
   @media (max-width: 768px) {
-    font-size: 1.2rem;
-    min-height: 1.8rem;
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
-.sourceTitle {
-  font-size: 0.95rem;
-  color: $accent-red;
-  font-family: $font-mono;
-  margin: 0;
-  min-height: 1.5rem;
-  line-height: 1.5;
-}
-
-.cardBody {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  font-family: $font-mono;
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.affiliation {
+.referenceName {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.affLabel {
+.nameLabel {
   font-size: 0.8rem;
   color: $text-secondary;
+  font-family: $font-mono;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-.affValue {
-  font-size: 0.9rem;
-  color: $text-primary;
+.nameValue {
+  font-size: 1.5rem;
+  color: $accent-red;
+  font-family: $font-mono;
+  text-shadow: 0 0 10px $accent-red;
+  font-weight: bold;
+  
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
-.quote {
-  margin: 1.5rem 0;
+.affiliationBadge {
+  display: flex;
+  align-items: center;
+}
+
+.affBadgeText {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid $accent-red;
+  color: $accent-red;
+  font-family: $font-mono;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+.referenceDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+  font-family: $font-mono;
+}
+
+.detailRow {
+  display: flex;
+  gap: 1rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+.detailLabel {
+  color: $text-secondary;
+  min-width: 100px;
+  font-size: 0.9rem;
+}
+
+.detailValue {
+  color: $text-primary;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+.quoteSection {
+  margin-top: 1.5rem;
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.3);
   border-left: 3px solid $accent-red;
-  min-height: 100px;
-  max-height: 150px;
-  display: flex;
-  align-items: center;
-  overflow-y: auto;
+}
+
+.quoteTitle {
+  font-size: 1rem;
+  color: $accent-red;
+  font-family: $font-mono;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .quoteText {
@@ -174,27 +261,6 @@
   line-height: 1.8;
   font-style: italic;
   margin: 0;
-}
-
-.contactInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.contactLabel {
-  font-size: 0.8rem;
-  color: $text-secondary;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.contactValue {
-  font-size: 0.9rem;
-  color: $accent-red;
-  font-family: $font-data;
-  word-break: break-all;
 }
 
 .attachment {
@@ -222,6 +288,7 @@
     transform: translateY(-2px);
   }
 }
+
 
 
 

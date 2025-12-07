@@ -63,10 +63,10 @@
   }
 }
 
-.encryptedChannel {
-  margin-bottom: 3rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+.channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .channelTitle {
@@ -82,70 +82,6 @@
     color: $accent-red;
     @include text-glow($accent-red);
   }
-}
-
-.encryptedEmail {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: rgba(255, 0, 0, 0.1);
-  border: 2px solid $accent-red;
-  position: relative;
-  font-family: $font-data;
-  color: $accent-red;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s;
-  @include text-glow($accent-red);
-  
-  &:hover {
-    background: rgba(255, 0, 0, 0.3);
-    border-color: $accent-red;
-    transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
-    @include text-glow($accent-red);
-    
-    svg {
-      filter: drop-shadow(0 0 8px $accent-red);
-    }
-  }
-  
-  svg {
-    transition: all 0.3s;
-  }
-}
-
-.emailValue {
-  flex: 1;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-}
-
-.pulseGlow {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: $accent-red;
-  box-shadow: 0 0 20px $accent-red;
-  animation: pulse 2s infinite;
-  transition: all 0.3s;
-}
-
-.encryptedEmail:hover .pulseGlow {
-  width: 14px;
-  height: 14px;
-  box-shadow: 0 0 30px $accent-red;
-}
-
-.nonSecureChannels {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
 }
 
 .channelLinks {

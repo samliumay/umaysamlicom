@@ -84,22 +84,31 @@
   "education": [
     {
       "institution": "TED University",
-      "degree": "M.Sc. Computer Science",
-      "gpa": "4.0",
+      "degree": "Master's degree, Computer Science",
+      "date": "Nov 2025 - Jun 2027",
+      "gpa": "4/4",
       "status": "In Progress",
-      "focus": "Explainable AI, RL, Red-Teaming."
+      "scholarship": "Full Success Scholarship",
+      "activities": "CYBER TEDU - Member and Assistant",
+      "description": "Computer Scientist focusing on AI Security, Reinforcement Learning, Secure System Design and Distributed Systems. After contributing to NATO's AI/ML Security Governance at SHAPE and NATO HQ Brussels, I now pursue an M.Sc. in Computer Science at TED University (100% Scholarship), researching AI black-box problems, agent deployment, and Red Teaming for secure, scalable intelligent systems."
     },
     {
       "institution": "TED University",
-      "degree": "B.Sc. Computer Engineering",
-      "gpa": "3.8",
-      "status": "Completed"
+      "degree": "Bachelor Degree, Computer Engineering",
+      "date": "Sep 2019 - Jun 2023",
+      "gpa": "3.8/4",
+      "status": "Completed",
+      "activities": "CYBER TEDU - Member and Assistant",
+      "description": "FHR: Developed an ML-assisted fog dehazing project, comparing the current dehazing algorithms and developing a platform for ML Researchers about image processing."
     },
     {
       "institution": "TED University",
-      "degree": "Minor: Applied Data Science",
-      "gpa": "4.0",
-      "status": "Completed"
+      "degree": "Secondary Degree, Applied Data Science",
+      "date": "Feb 2021 - Jun 2023",
+      "gpa": "4/4",
+      "status": "Completed",
+      "activities": "CYBER TEDU - Member and Assistant",
+      "description": "Project ROOAPSEA: Conducted research to improve airline passenger satisfaction prediction, achieving a 10% increase in accuracy."
     }
   ],
   "blueprints": [

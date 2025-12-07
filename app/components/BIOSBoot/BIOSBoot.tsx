@@ -6,77 +6,36 @@ import styles from './BIOSBoot.module.scss';
 
 /**
  * BIOS Boot Component
- * Simulates a system boot sequence with terminal-style text output
- * Displays integrity checks, uplink establishment, and biometric decryption
+ * Loading screen with spinning symbol and percentage indicator
  */
 export default function BIOSBoot({ onComplete }: { onComplete: () => void }) {
-  const [currentLine, setCurrentLine] = useState(0);
-  const [displayedText, setDisplayedText] = useState('');
-  const [showComplete, setShowComplete] = useState(false);
-  const [userIP, setUserIP] = useState('LOADING...');
-  const [bootSequence, setBootSequence] = useState<string[]>([]);
-
-  // Fetch user IP address
-  useEffect(() => {
-    const fetchIP = async () => {
-      try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        setUserIP(data.ip);
-      } catch (error) {
-        // Fallback if IP fetch fails
-        setUserIP('UNAVAILABLE');
-      }
-    };
-    fetchIP();
-  }, []);
-
-  // Update boot sequence when IP is loaded
-  useEffect(() => {
-    if (userIP !== 'LOADING...') {
-      setBootSequence([
-        '> CHECKING_INTEGRITY... OK',
-        '> ESTABLISHING_UPLINK (MIT_SECURE_NODE_01)...',
-        `> DECRYPTING_BIOMETRICS: ${userIP}...`,
-        '> CLEARANCE_LEVEL: Unclassified... verified.',
-        '> WELCOME, OPERATOR.'
-      ]);
-    }
-  }, [userIP]);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    if (bootSequence.length === 0) return; // Wait for IP to load
+    const startTime = Date.now();
+    const minDuration = 2000; // 2 seconds minimum
+    const targetProgress = 100;
 
-    if (currentLine < bootSequence.length) {
-      const currentText = bootSequence[currentLine];
-      let charIndex = 0;
-      setDisplayedText('');
+    const updateProgress = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min((elapsed / minDuration) * 100, targetProgress);
+      
+      setLoadingProgress(Math.floor(progress));
 
-      const typeInterval = setInterval(() => {
-        if (charIndex < currentText.length) {
-          setDisplayedText(currentText.slice(0, charIndex + 1));
-          charIndex++;
-        } else {
-          clearInterval(typeInterval);
-          // Wait before moving to next line
-          setTimeout(() => {
-            setCurrentLine(prev => prev + 1);
-          }, 800);
-        }
-      }, 30); // Fast typing speed
-
-      return () => clearInterval(typeInterval);
-    } else {
-      // All lines complete, show white screen then transition
-      setTimeout(() => {
-        setShowComplete(true);
-        // Show white screen briefly then transition
+      if (progress >= targetProgress) {
+        setIsComplete(true);
+        // Wait a bit before completing
         setTimeout(() => {
           onComplete();
-        }, 500);
-      }, 1000);
-    }
-  }, [currentLine, bootSequence, onComplete]);
+        }, 300);
+      } else {
+        requestAnimationFrame(updateProgress);
+      }
+    };
+
+    requestAnimationFrame(updateProgress);
+  }, [onComplete]);
 
   return (
     <AnimatePresence>
@@ -86,27 +45,18 @@ export default function BIOSBoot({ onComplete }: { onComplete: () => void }) {
         transition={{ duration: 0.5 }}
         className={styles.biosBoot}
       >
-        <div className={styles.terminal}>
-          {bootSequence.slice(0, currentLine).map((line, index) => (
-            <div key={index} className={styles.bootLine}>
-              {line}
+        <div className={styles.loadingContainer}>
+          <div className={styles.progressContainer}>
+            <div className={styles.progressBar}>
+              <div 
+                className={styles.progressFill}
+                style={{ width: `${loadingProgress}%` }}
+              ></div>
             </div>
-          ))}
-          {currentLine < bootSequence.length && (
-            <div className={styles.bootLine}>
-              {displayedText}
-              <span className={styles.cursor}>_</span>
+            <div className={styles.progressText}>
+              {loadingProgress}%
             </div>
-          )}
-          {showComplete && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className={styles.loadingScreen}
-            />
-          )}
+          </div>
         </div>
       </motion.div>
     </AnimatePresence>

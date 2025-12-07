@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Lock, Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 import styles from './Contact.module.scss';
 import { OPERATIVE_INTEL } from '@/app/data/intel';
 
@@ -29,20 +29,8 @@ export default function Contact() {
           </h2>
 
           <div className={styles.contactCard}>
-            <div className={styles.encryptedChannel}>
-              <h3 className={styles.channelTitle}>ENCRYPTED CHANNEL (PRIMARY):</h3>
-              <a 
-                href={`mailto:${OPERATIVE_INTEL.identity.contact.encrypted}`}
-                className={styles.encryptedEmail}
-              >
-                <Lock size={20} />
-                <span className={styles.emailValue}>{OPERATIVE_INTEL.identity.contact.encrypted}</span>
-                <span className={styles.pulseGlow}></span>
-              </a>
-            </div>
-
-            <div className={styles.nonSecureChannels}>
-              <h3 className={styles.channelTitle}>NON-SECURE CHANNELS:</h3>
+            <div className={styles.channels}>
+              <h3 className={styles.channelTitle}>CONTACT CHANNELS:</h3>
               <div className={styles.channelLinks}>
                 <motion.a
                   href={`mailto:${OPERATIVE_INTEL.identity.contact.email}`}

@@ -31,28 +31,72 @@ export default function IntelDossier() {
         >
           <h3 className={styles.subsectionTitle}>EDUCATION // CREDENTIALS</h3>
           
-          <div className={styles.educationList}>
+          <div className={styles.timeline}>
             {OPERATIVE_INTEL.education.map((edu, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={`${edu.institution}-${edu.degree}-${index}`}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={styles.educationItem}
+                className={styles.educationReport}
               >
-                <div className={styles.eduHeader}>
-                  <span className={styles.eduInstitution}>{edu.institution}</span>
-                  {edu.status && (
-                    <span className={styles.eduStatus}>{edu.status}</span>
+                <div className={styles.timelineConnector}>
+                  <div className={styles.timelineDot}></div>
+                  {index < OPERATIVE_INTEL.education.length - 1 && (
+                    <div className={styles.timelineLine}></div>
                   )}
                 </div>
-                <p className={styles.eduDegree}>{edu.degree}</p>
-                <p className={styles.eduGPA}>GPA: {edu.gpa}</p>
-                {edu.focus && (
-                  <p className={styles.eduFocus}>Focus: {edu.focus}</p>
-                )}
-                <p className={styles.eduStatusText}>Status: {edu.status}</p>
+
+                <div className={styles.educationCard}>
+                  <div className={styles.educationHeader}>
+                    <div className={styles.educationInstitution}>
+                      <span className={styles.institutionLabel}>INSTITUTION:</span>
+                      <span className={styles.institutionValue}>{edu.institution}</span>
+                    </div>
+                    <div className={styles.educationStatus}>
+                      <span className={`${styles.statusBadge} ${edu.status === 'In Progress' ? styles.statusActive : styles.statusCompleted}`}>
+                        {edu.status}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className={styles.educationDetails}>
+                    <div className={styles.detailRow}>
+                      <span className={styles.detailLabel}>Degree:</span>
+                      <span className={styles.detailValue}>{edu.degree}</span>
+                    </div>
+                    
+                    {edu.date && (
+                      <div className={styles.detailRow}>
+                        <span className={styles.detailLabel}>Date:</span>
+                        <span className={styles.detailValue}>{edu.date}</span>
+                      </div>
+                    )}
+                    
+                    <div className={styles.detailRow}>
+                      <span className={styles.detailLabel}>Grade:</span>
+                      <span className={styles.detailValue}>
+                        {edu.gpa}
+                        {edu.scholarship && ` | ${edu.scholarship}`}
+                      </span>
+                    </div>
+                    
+                    {edu.activities && (
+                      <div className={styles.detailRow}>
+                        <span className={styles.detailLabel}>Activities:</span>
+                        <span className={styles.detailValue}>{edu.activities}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {edu.description && (
+                    <div className={styles.briefSection}>
+                      <h4 className={styles.briefTitle}>DESCRIPTION:</h4>
+                      <p className={styles.briefText}>{edu.description}</p>
+                    </div>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
